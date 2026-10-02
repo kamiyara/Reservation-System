@@ -17,10 +17,13 @@ public class ResourceService {
 		return resourceRepository.findAll();
 	}
 
-	//Resourceの新規作成
+	//Resourceの新規作成　同一の名前、名前の無記入は禁止
 	public Resource createNewResource(Resource newResource) {
 		String newName = newResource.getName();
 		if (newName == null || newName.isEmpty()) {
+			return null;
+		}
+		if(resourceRepository.findByName(newName).isPresent()) {
 			return null;
 		}
 		return resourceRepository.save(newResource);
