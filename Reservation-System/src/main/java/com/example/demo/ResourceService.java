@@ -35,14 +35,4 @@ public class ResourceService {
 		return findAll();
 	}
 
-	//Resourceの削除(nameから)
-	public List<Resource> deleteResourceById(String name) {
-		Resource deletedResource = resourceRepository.findByName(name);
-		if (deletedResource == null) {
-			return null;
-		}
-		resourceRepository.deleteById(deletedResource.getId());
-		return findAll();
-	}
-
 }

@@ -18,6 +18,9 @@ public class Resource {
 		this.id=id;
 		this.name=name;
 	}
+	public Resource() {
+		
+	}
 	
 	//Getter
 	public Long getId() {

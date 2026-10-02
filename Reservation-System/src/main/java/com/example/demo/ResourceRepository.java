@@ -5,5 +5,4 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ResourceRepository extends JpaRepository<Resource, Long> {
-	public Resource findByName(String name);
 }
